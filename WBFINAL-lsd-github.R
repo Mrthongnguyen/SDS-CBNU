@@ -78,7 +78,7 @@ library(ggplot2)
 se <- function(value) sd(value)/sqrt(length(value))   # to calculate standard error in the mean
 p = ggplot(data=data2, aes(x=variable, y=value, fill=Group))
 p = p + stat_summary(fun.y = mean, geom = "bar", position = "dodge",colour="black")
-p = p + labs(title="(A) WT")+ylab("pDARPP-32 Thr34/¦Â - Actin(% Control)")+xlab("")+
+p = p + labs(title="(A) WT")+ylab("pDARPP-32 Thr34/Â¦Ã‚ - Actin(% Control)")+xlab("")+
   scale_x_discrete(name="Regions", 
                    breaks=c("PFCP34V","HPP34V","AMYP34V","STP34V"), 
                    labels=c("PFC","HP","AMY","ST"))+scale_fill_discrete(name="Group")
@@ -104,7 +104,7 @@ library(ggplot2)
 se <- function(value) sd(value)/sqrt(length(value))   # to calculate standard error in the mean
 p = ggplot(data=data2, aes(x=variable, y=value, fill=Group))
 p = p + stat_summary(fun.y = mean, geom = "bar", position = "dodge",colour="black")
-p = p + labs(title="(A) WT")+ylab("pDARPP-32 Thr75/¦Â - Actin (% Control)")+xlab("")+
+p = p + labs(title="(A) WT")+ylab("pDARPP-32 Thr75/Â¦Ã‚ - Actin (% Control)")+xlab("")+
   scale_x_discrete(name="Regions", 
                    breaks=c("PFCP75V","HPP75V","AMYP75V","STP75V"), 
                    labels=c("PFC","HP","AMY","ST"))+scale_fill_discrete(name="Group")
@@ -134,7 +134,7 @@ library(ggplot2)
 se <- function(value) sd(value)/sqrt(length(value))   # to calculate standard error in the mean
 p = ggplot(data=data2, aes(x=variable, y=value, fill=Group))
 p = p + stat_summary(fun.y = mean, geom = "bar", position = "dodge",colour="black")
-p = p + labs(title="(B) WT")+ylab("Total DARPP-32/¦Â - Actin (% Control)")+xlab("")+
+p = p + labs(title="(B) WT")+ylab("Total DARPP-32/Â¦Ã‚ - Actin (% Control)")+xlab("")+
   scale_x_discrete(name="Regions", 
                    breaks=c("PFCD32","HPD32","AMYD32","STD32"), 
                    labels=c("PFC","HP","AMY","ST"))+scale_fill_discrete(name="Group")
@@ -145,20 +145,6 @@ p= p + scale_fill_grey() + theme_classic()
 p= p+ annotate("text",x=1.0,y=1.45,label="T")
 p + stat_summary(geom="errorbar",position=position_dodge(width=0.9),
                  fun.data=function(value)c(ymin=mean(value)-se(value),ymax=mean(value)+se(value)), width=0.2)
-
-library(ggplot2) 
-se <- function(value) sd(value)/sqrt(length(value))   # to calculate standard error in the mean
-p = ggplot(data=data2, aes(x=variable, y=value, fill=Group))
-p = p + stat_summary(fun.y = mean, geom = "bar", position = "dodge",colour="black")
-p = p + labs(title="(C) KO")+ylab("pDARPP-32 Thr75/Total DARPP-32(% Control)")+xlab("")+
-  scale_x_discrete(name="Regions", 
-                   breaks=c("PFCP75","HPP75","AMYP75","STP75"), 
-                   labels=c("PFC","HP","AMY","ST"))+scale_fill_discrete(name="Group")
-p= p+ annotate("text",x=3.3,y=0.9,label="*")
-p= p + scale_fill_grey() + theme_classic()
-p + stat_summary(geom="errorbar",position=position_dodge(width=0.9),
-                 fun.data=function(value)c(ymin=mean(value)-se(value),ymax=mean(value)+se(value)), width=0.2)
-
 
 
 
